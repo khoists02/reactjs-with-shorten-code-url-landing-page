@@ -1,0 +1,161 @@
+h1,
+.font-h1 {
+  @include font-h1;
+}
+
+h2,
+.font-h2 {
+  @include font-h2;
+}
+
+h3,
+.font-h3 {
+  @include font-h3;
+}
+
+h4,
+.font-h4 {
+  @include font-h4;
+}
+
+h5,
+.font-h5 {
+  @include font-h5;
+}
+
+h6,
+.font-h6 {
+  @include font-h6;
+}
+
+@media only screen and (max-width: $mq-mobile-max) {
+  .#{$mobile-prefix}-font-h1 {
+    @include font-h1;
+  }
+
+  .#{$mobile-prefix}-font-h2 {
+    @include font-h2;
+  }
+
+  .#{$mobile-prefix}-font-h3 {
+    @include font-h3;
+  }
+
+  .#{$mobile-prefix}-font-h4 {
+    @include font-h4;
+  }
+
+  .#{$mobile-prefix}-font-h5 {
+    @include font-h5;
+  }
+
+  .#{$mobile-prefix}-font-h6 {
+    @include font-h6;
+  }
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.no-wrap {
+  white-space: nowrap !important;
+}
+
+.pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media only screen and (max-width: $mq-tablet-max) {
+  .#{$tablet-prefix}-text-left {
+    text-align: left;
+  }
+
+  .#{$tablet-prefix}-text-right {
+    text-align: right;
+  }
+
+  .#{$tablet-prefix}-text-center {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: $mq-mobile-max) {
+  .#{$mobile-prefix}-text-left {
+    text-align: left;
+  }
+
+  .#{$mobile-prefix}-text-right {
+    text-align: right;
+  }
+
+  .#{$mobile-prefix}-text-center {
+    text-align: center;
+  }
+}
+
+.overflow-ellipsis {
+  @include overflow-ellipsis;
+}
+
+.line-height-none {
+  line-height: 0;
+}
+
+/* Text colors */
+.highlight {
+  color: $color-theme;
+}
+
+.text-primary {
+  color: $color-text;
+}
+
+.text-sub {
+  color: $color-text-sub;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-danger {
+  color: $color-danger;
+}
+
+.text-warning {
+  color: $color-warning;
+}
+
+.word-wrap {
+  word-wrap: break-word;
+}

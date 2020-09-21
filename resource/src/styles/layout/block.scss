@@ -1,0 +1,23 @@
+.block-site {
+  --site-padding: 22px;
+  --max-base: 1140px;
+
+  position: relative;
+  width: 100%;
+  max-width: calc(var(--max-base) + var(--site-padding) * 2);
+  padding: 0 var(--site-padding);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and (min-width: 1440px) {
+    --site-padding: 30px;
+  }
+
+  &.lg {
+    --max-base: 1000px;
+  }
+
+  &.md {
+    --max-base: 600px;
+  }
+}
