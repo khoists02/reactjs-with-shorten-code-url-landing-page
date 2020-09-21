@@ -1,0 +1,23 @@
+@import '../../styles/settings/index';
+@import '../../styles/tools/index';
+
+.banner {
+  background: #ffffff;
+
+  &__left {
+    padding-right: $size-md;
+  }
+
+  &--title {
+    font-size: 3rem;
+
+    @include title();
+  }
+
+  .body {
+
+    @include mobile-only {
+      flex-direction: column;
+    }
+  }
+}

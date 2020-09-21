@@ -1,0 +1,35 @@
+$btn-default-fixed-width: 150px;
+$padding-top-bottom: 10px;
+
+.btn {
+  padding: $padding-top-bottom $size-md;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  border: 1px solid transparent;
+
+  @include font-h3();
+
+  &.btn--fixed {
+    width: $btn-default-fixed-width;
+  }
+
+  &--circle {
+    border-radius: 50px;
+  }
+
+  &--primary {
+    background: $color-theme;
+  }
+
+  &--transparent {
+    color: $color-text-sub;
+    @include font-normal();
+  }
+}

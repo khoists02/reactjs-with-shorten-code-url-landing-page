@@ -1,11 +1,12 @@
 import React from 'react';
-import config from './config';
+import Banner from './components/Banner/';
+import Header from './components/Header/';
 
 function App() {
-  console.log(config.apiGateway);
   return (
     <div className="app">
-      welcome
+      <Header></Header>
+      <Banner></Banner>
     </div>
   );
 }
