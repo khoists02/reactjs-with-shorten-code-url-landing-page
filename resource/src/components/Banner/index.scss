@@ -37,7 +37,7 @@
   }
 
   .body {
-    padding: 120px $size-xl;
+    padding: 50px $size-xl 120px $size-xl;
 
     @include mobile-only {
       padding-top: 20px;

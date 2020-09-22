@@ -1,18 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import './index.scss';
 import { useInput } from '../../hooks';
+import config from '../../config';
 
 const GetLink = (props) => {
-  const { value, bind, reset } = useInput('');
+  const { value, bind } = useInput('');
   const [error, setError] = useState(false);
+  const [ newUrls, setNewUrls ] = useState([]);
 
-  const shortenLink = () => {
+  const useCallbackHandleShorten = useCallback(()=> {
     setError(!validLink(value));
     if (!validLink(value)) {
       return;
     }
-    reset();
-  }
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ longUrl: value })
+    };
+
+    fetch(`${config.apiGateway.URL}shorten`, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        const { shorten } = data;
+        shorten && setNewUrls([shorten, ...newUrls]);
+      }).catch(error=> {
+        console.log('error');
+      });
+  }, [value, newUrls]);
+
+  useEffect(()=> {
+    console.log('newUrls', newUrls);
+  }, [newUrls]);
 
   const validLink = str => {
     const pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
@@ -31,12 +51,19 @@ const GetLink = (props) => {
           <input className="input" type="text" {...bind} />
         </div>
         <div className="shorten">
-          <button className="btn btn--primary btn--shorten" onClick={shortenLink}>Shorten It!</button>
+          <button className="btn btn--primary btn--shorten" onClick={useCallbackHandleShorten} disabled={!value}>Shorten It!</button>
         </div>
       </div>
       <div className={error ? 'show text-danger m-t-xxs font-h4' : 'hidden'}>
-          Your link is Invalid
-        </div>  
+        Your link is Invalid
+      </div>
+      {newUrls.map((item, index)=> {
+          return (
+            <div className="item m-tb-md" key={item?.id}>
+              <span className="text-sub">{item?.shortUrl}</span>
+            </div>
+          );
+        })}
     </div>
   )
 };

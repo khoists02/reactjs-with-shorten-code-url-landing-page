@@ -4,7 +4,7 @@ const dev = {
   },
   apiGateway: {
     REGION: "YOUR_DEV_API_GATEWAY_REGION",
-    URL: "YOUR_DEV_API_GATEWAY_URL"
+    URL: "http://127.0.0.1:5000/"
   },
   cognito: {
     REGION: "YOUR_DEV_COGNITO_REGION",

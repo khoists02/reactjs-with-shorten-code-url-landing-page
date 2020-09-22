@@ -16,6 +16,11 @@ $padding-top-bottom: 10px;
 
   @include font-h3();
 
+  &[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
   &.btn--fixed {
     width: $btn-default-fixed-width;
   }
