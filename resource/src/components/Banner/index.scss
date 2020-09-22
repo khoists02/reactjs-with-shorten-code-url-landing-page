@@ -6,6 +6,11 @@
 
   &__left {
     padding-right: $size-md;
+
+    @include mobile-only {
+      padding-right: 0;
+      margin-top: $size-md;
+    }
   }
 
   &--title {
@@ -14,10 +19,18 @@
     @include title();
   }
 
+  &--title, &--sub, &--started {
+
+    @include mobile-only {
+      text-align: center;
+    }
+  }
+
   .body {
 
     @include mobile-only {
       flex-direction: column;
+      flex-flow: column-reverse;
     }
   }
 }

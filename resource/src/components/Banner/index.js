@@ -5,17 +5,17 @@ import bannerImg from '../../images/illustration-working.svg';
 const Banner = (props) => {
   return (
     <div className="banner">
-      <div className="block-site p-tb-xl body flexbox">
+      <div className="block-site p-tb-xl body flex-center-between">
         <div className="banner__left">
-          <div className="banner--title m-b-lg">
+          <div className="banner--title m-b-sm">
             More than just shorter links
         </div>
 
-          <div className="banner--sub-title sub m-b-lg">
+          <div className="banner--sub sub m-b-lg">
             Build your brand's recognition and get detailed insight on how your links are performing.
         </div>
 
-          <div className="banner--get-started">
+          <div className="banner--started">
             <button className="btn btn--primary btn--circle">
               Get Started
           </button>
@@ -23,7 +23,7 @@ const Banner = (props) => {
         </div>
 
         <div className="banner__right">
-          <img src={bannerImg} alt="Banner Image" />
+          <img src={bannerImg} alt={"Banner"} />
         </div>
       </div>
     </div>

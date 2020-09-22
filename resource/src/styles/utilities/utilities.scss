@@ -10,3 +10,7 @@
   @include sub();
   color: $color-text-sub;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
