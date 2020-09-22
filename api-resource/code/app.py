@@ -3,7 +3,7 @@ from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS, cross_origin
 from db import db
 
-from resources.shorten import Shorten 
+from resources.shorten import Shorten, ShortenList
 from flask_shorturl import ShortUrl
 
 # CONFIGURATION
@@ -28,7 +28,7 @@ def create_tables():
 
 # ADD RESOURCES
 api.add_resource(Shorten, '/shorten')
-
+api.add_resource(ShortenList, '/shortens')
 
 # RUN MAIN
 if __name__ == "__main__":

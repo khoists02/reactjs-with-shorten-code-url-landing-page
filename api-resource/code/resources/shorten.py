@@ -89,3 +89,9 @@ class Shorten(Resource):
       ret = s[dec % 62] + ret
       dec = int(dec/62)
     return ret
+
+
+class ShortenList(Resource):
+  def get(self):
+    shortens = ShortenModel.get_all()
+    return {"shortens": shortens}, 200

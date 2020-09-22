@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import './index.scss';
 import { useInput } from '../../hooks';
 import config from '../../config';
@@ -29,10 +29,6 @@ const GetLink = (props) => {
         console.log('error');
       });
   }, [value, newUrls]);
-
-  useEffect(()=> {
-    console.log('newUrls', newUrls);
-  }, [newUrls]);
 
   const validLink = str => {
     const pattern = new RegExp('^(https?:\\/\\/)?' + // protocol

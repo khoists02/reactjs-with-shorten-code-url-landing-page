@@ -25,6 +25,9 @@ class ShortenModel(db.Model):
   def find_by_shorten_short_url(cls, shortUrl):
     return cls.query.filter_by(shortUrl=shortUrl).first()
 
+  @classmethod
+  def get_all(cls):
+    return list(map(lambda x: x.json(), cls.query.filter().limit(5).all()))
 
   def save_to_db(self):
     db.session.add(self)

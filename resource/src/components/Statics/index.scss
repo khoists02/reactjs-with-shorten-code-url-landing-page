@@ -1,0 +1,10 @@
+@import '../../styles/settings/index';
+@import '../../styles/tools/index';
+
+.statics {
+  margin-top: 100px;
+
+  &--item {
+    margin-bottom: $size-sm;
+  }
+}
