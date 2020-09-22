@@ -1,3 +1,4 @@
 import { useInput } from './Input';
+import { useFetch } from './useFetch';
 
-export { useInput };
+export { useInput, useFetch };

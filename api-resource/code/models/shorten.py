@@ -26,8 +26,11 @@ class ShortenModel(db.Model):
     return cls.query.filter_by(shortUrl=shortUrl).first()
 
   @classmethod
-  def get_all(cls):
-    return list(map(lambda x: x.json(), cls.query.filter().limit(5).all()))
+  def get_all(cls, page, pageSize = 10):
+    if page:
+      return list(map(lambda x: x.json(), cls.query.offset(int(page) * int(pageSize)).limit(pageSize).all()))
+    else:
+      return list(map(lambda x: x.json(), cls.query.filter().limit(pageSize).all()))
 
   def save_to_db(self):
     db.session.add(self)

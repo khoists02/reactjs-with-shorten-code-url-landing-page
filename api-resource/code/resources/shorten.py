@@ -93,5 +93,9 @@ class Shorten(Resource):
 
 class ShortenList(Resource):
   def get(self):
-    shortens = ShortenModel.get_all()
+    # get take arguments
+    pageSize = request.args.get('pageSize')
+    page = request.args.get('page')
+
+    shortens = ShortenModel.get_all(page, pageSize)
     return {"shortens": shortens}, 200

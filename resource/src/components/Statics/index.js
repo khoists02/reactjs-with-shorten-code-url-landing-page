@@ -1,32 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import config from '../../config';
+import { useFetch } from '../../hooks';
 import './index.scss';
 
-const Statics =(props)=> {
-  const [ listShorten, setListShorten ] = useState([]);
+const Statics = () => {
+  const [pagination, setPagination] = useState({page: 0, pageSize: 10});
 
-  useEffect(()=> {
-    fetch(`${config.apiGateway.URL}shortens`)
-      .then(response => response.json())
-      .then(data => {
-        const { shortens } = data;
-          setListShorten([...listShorten, ...shortens]);
-      });
-  }, []);
+  const { data, loading } = useFetch(`${config.apiGateway.URL}shortens?page=${pagination?.page}&pageSize=${pagination?.pageSize}`);
+
+  const onPagination =()=> {
+    setPagination({ ...pagination, pageSize: pagination.pageSize + 10 });
+  }
+
+  const next =()=> {
+    setPagination({ ...pagination, page: pagination.page + 1});
+  }
 
   return (
-    <div className="statics block-site">
-      {/* <div className="font-h1 m-b-md">Your history</div>
-      {listShorten.map((item, index)=> {
-        return (
-          <div className="statics--item flex-center-between" key={item?.id}>
-            <div>{item?.shortUrl}</div>
-            <div>mark</div>
-          </div>
-        );
-      })} */}
+    <div className="statics block-site m-b-lg">
+      {loading ? 'Loading ...' : (
+        <>
+          <div className="font-h1 m-b-md">Your history</div>
+          {data?.map((item, index) => {
+            return (
+              <div className="statics--item flex-center-between" key={item?.id}>
+                <div>{item?.longUrl}</div>
+                {/* <div>mark</div> */}
+              </div>
+            );
+          })}
+        </>
+      )}
 
-      
+      <button className="btn btn--primary" onClick={onPagination}>Show more</button>
+      <button className="btn btn--primary m-l-md" onClick={next}>Next</button>
     </div>
   )
 };
