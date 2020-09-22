@@ -18,10 +18,36 @@
   background-size: cover;
   background-color: $color-dark-violet;
   background-blend-mode: luminosity;
+
+  .container {
+    &--input {
+      @include mobile-only {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: $size-md;
+
+        .input {
+          height: 50px;
+        }
+      }
+    }
+
+    @include mobile-only {
+      flex-direction: column;
+    }
+  }
+
+  @include mobile-only {
+    padding: 40px 30px;
+  }
 }
 
 .btn--shorten {
   border-radius: 7px;
+
+  @include mobile-only {
+    width: 100%;
+  }
 }
 
 .input {

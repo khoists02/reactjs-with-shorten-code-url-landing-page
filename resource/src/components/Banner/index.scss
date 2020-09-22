@@ -17,6 +17,10 @@
     font-size: 3rem;
 
     @include title();
+
+    @include mobile-only {
+      font-size: 2rem;
+    }
   }
 
   &--title, &--sub, &--started {
@@ -26,9 +30,18 @@
     }
   }
 
+  &--sub {
+    @include mobile-only {
+      font-size: 1rem !important;
+    }
+  }
+
   .body {
+    padding: 120px $size-xl;
 
     @include mobile-only {
+      padding-top: 20px;
+      padding-bottom: 160px;
       flex-direction: column;
       flex-flow: column-reverse;
     }

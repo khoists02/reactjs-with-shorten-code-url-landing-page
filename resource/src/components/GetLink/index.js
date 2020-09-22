@@ -26,8 +26,8 @@ const GetLink = (props) => {
 
   return (
     <div className="getlink">
-      <div className="flexbox full-width">
-        <div className="m-r-md flex-auto">
+      <div className="flexbox container full-width">
+        <div className="m-r-md container--input flex-auto">
           <input className="input" type="text" {...bind} />
         </div>
         <div className="shorten">

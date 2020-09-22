@@ -5,7 +5,7 @@ import bannerImg from '../../images/illustration-working.svg';
 const Banner = (props) => {
   return (
     <div className="banner">
-      <div className="block-site p-tb-xl body flex-center-between">
+      <div className="block-site body flex-center-between">
         <div className="banner__left">
           <div className="banner--title m-b-sm">
             More than just shorter links
