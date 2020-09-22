@@ -20,7 +20,7 @@ const Statics = () => {
     <div className="statics block-site m-b-lg">
       {loading ? 'Loading ...' : (
         <>
-          <div className="font-h1 m-b-md">Your history</div>
+          <div className="font-h1 m-b-md">Your histories</div>
           {data?.map((item, index) => {
             return (
               <div className="statics--item flex-center-between" key={item?.id}>
@@ -34,6 +34,7 @@ const Statics = () => {
 
       <button className="btn btn--primary" onClick={onPagination}>Show more</button>
       <button className="btn btn--primary m-l-md" onClick={next}>Next</button>
+      <button className="btn btn--primary m-l-md" onClick={()=> setPagination({page: 0, pageSize: 10})}>Reset</button>
     </div>
   )
 };

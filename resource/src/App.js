@@ -1,5 +1,7 @@
 import React from 'react';
 import Banner from './components/Banner/';
+import Form from './components/Form/';
+// import Example from './components/Example/';
 import GetLink from './components/GetLink/';
 import Header from './components/Header/';
 import Statics from './components/Statics/';
@@ -14,7 +16,9 @@ function App() {
         <GetLink></GetLink>
       </div>
       <Statics></Statics>
+      {/* <Example></Example> */}
 
+      <Form></Form>
     </div>
   );
 }
