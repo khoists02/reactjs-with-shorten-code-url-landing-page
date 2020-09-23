@@ -8,3 +8,14 @@
     margin-bottom: $size-sm;
   }
 }
+
+.btn-groups {
+  @include mobile-only {
+    // flex-direction: column;
+
+    // .btn {
+    //   margin-left: 0;
+    //   margin-bottom: $size-md;
+    // }
+  }
+}

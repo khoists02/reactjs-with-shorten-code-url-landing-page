@@ -37,13 +37,16 @@
   }
 
   .body {
-    padding: 50px $size-xl 120px $size-xl;
+    padding-top: 40px;
+    padding-bottom: 120px;
 
     @include mobile-only {
       padding-top: 20px;
       padding-bottom: 160px;
       flex-direction: column;
       flex-flow: column-reverse;
+      padding-left: 22px;
+      padding-right: 22px;
     }
   }
 }

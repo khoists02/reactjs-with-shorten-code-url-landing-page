@@ -2,42 +2,15 @@
 @import '../../styles/tools/index';
 
 .form {
-  flex-direction: column;
-  
-
   &--container {
     @include flex-center();
     flex-direction: column;
     width: 500px;
     padding: $size-md;
-  }
 
-  &--control {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: $size-md;
-    width: 100%;
-  }
-
-  &--input {
-    padding: $size-xs $size-xs;
-    width: 100%;
-    @include font-h4();
-    border: 1px solid $color-theme;
-
-    &[error] {
-      border: 1px solid $color-danger;
+    @include mobile-only {
+      max-width: 100%;
+      padding: 0 ;
     }
-  }
-
-  &--label {
-    margin-bottom: $size-xxs;
-    @include font-h4();
-  }
-
-  &--error {
-    @include font-h5();
-    color: $color-danger;
-    margin-top: $size-xxs;
   }
 }

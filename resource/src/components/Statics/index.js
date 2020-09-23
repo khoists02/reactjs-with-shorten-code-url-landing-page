@@ -24,7 +24,7 @@ const Statics = () => {
           {data?.map((item, index) => {
             return (
               <div className="statics--item flex-center-between" key={item?.id}>
-                <div>{item?.longUrl}</div>
+                <div className='font-h5 overflow-ellipsis'>{item?.longUrl}</div>
                 {/* <div>mark</div> */}
               </div>
             );
@@ -32,9 +32,11 @@ const Statics = () => {
         </>
       )}
 
-      <button className="btn btn--primary" onClick={onPagination}>Show more</button>
-      <button className="btn btn--primary m-l-md" onClick={next}>Next</button>
-      <button className="btn btn--primary m-l-md" onClick={()=> setPagination({page: 0, pageSize: 10})}>Reset</button>
+      <div className='btn-groups flex-center-between'>
+        <button className="btn btn--primary" onClick={onPagination}>More</button>
+        <button className="btn btn--primary m-l-md" onClick={next}>Next</button>
+        <button className="btn btn--primary m-l-md" onClick={()=> setPagination({page: 0, pageSize: 10})}>Reset</button>
+      </div>
     </div>
   )
 };

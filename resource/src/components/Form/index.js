@@ -5,7 +5,7 @@ import './index.scss';
 const Form = () => {
 
   const submitForm = () => {
-    console.log('values', values); 
+    console.log('values', values);
     // SEND DATA TO API
   }
 

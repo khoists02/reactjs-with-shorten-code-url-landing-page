@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 import bannerImg from '../../images/illustration-working.svg';
 
-const Banner = (props) => {
+const Banner = () => {
   return (
     <div className="banner">
       <div className="block-site body flex-center-between">
